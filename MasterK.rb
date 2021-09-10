@@ -89,20 +89,20 @@ class VendingMachine
   end #K70~79
 
   def purchasable?(drink)
-    enough_money?(drink) && in_stock?(drink) #K-55~62
+    enough_money?(drink) && in_stock?(drink) #K-82-89
 
   end
 
   def purchasable_drink_list
     @items.each_value do |drink|
-      if purchasable?(drink) #K-64~68
+      if purchasable?(drink) #K-91-94
         puts "#{drink.name}を買えるよ"
 
       else
         puts "#{drink.name}を買えません"
       end
     end
-  end #C-32
+  end #C-31
 
   def store(drink, num)
     @stocks[drink.name] += num
@@ -135,7 +135,7 @@ def buy_process(number)
   if @vm.total_money < drink.price 
     puts "お金が足りないよ"
     exit
-  elsif @vm.stocks[drink.name] == 0 #AK-46
+  elsif @vm.stocks[drink.name] == 0 #K-108
     puts "#{drink.name}の在庫がなくなちゃった！ゴメン"
     exit
   else

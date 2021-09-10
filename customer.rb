@@ -23,17 +23,17 @@ elsif number == 1
     number = gets.to_i
     if number == 2
       puts "#{@vm.total_money}円のおつりだよ！"
-        @vm.return_money #K51~53
+        @vm.return_money #K78-80
         break #繰り返し処理を途中で終了させる
     elsif number == 1
       puts '購入可能なドリンクリストは↓だよ！'
-      @vm.purchasable_drink_list #K-70~79
+      @vm.purchasable_drink_list #K-96-105
       puts 'お金を追加する？'
       puts '1:はい'
       puts '2:いいえ'
       number = gets.to_i
       if number == 1
-        insert_money_process #C-14
+        insert_money_process #C-12
       end
     end
   end
